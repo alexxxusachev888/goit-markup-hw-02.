@@ -19,17 +19,25 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  color: var(--main-color);
   letter-spacing: 0.03em;
+  color: var(--main-color);
+  background-color: var(--background-color-white);
 }
-
-.screenreader-only {
-  visibility: hidden;
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 [href] {
   text-decoration: none;
-}
-.title {
+  color: var(--black-color);
 }
 
 /* Header*/
@@ -39,19 +47,20 @@ body {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  color: var(--black-color);
-}
-.header__logo-accent {
-  color: var(--second-color);
 }
 
+.header__logo-accent {
+  display: inline;
+  color: var(--second-color);
+}
 .header__navigation-link {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-color);
 }
-.header__navigation-link:hover {
+.header__navigation-link:hover,
+.header__navigation-link:focus {
   color: var(--second-color);
 }
 .header__contacts-link {
@@ -81,9 +90,6 @@ body {
   color: var(--white-color);
 }
 .hero__btn {
-  display: block;
-  margin: 0 auto;
-  margin-top: 30px;
   padding: 10px 32px;
 
   font-family: inherit;
@@ -185,6 +191,9 @@ body {
 .footer__list {
   font-style: normal;
 }
+.footer__link {
+  line-height: 1.71;
+}
 .footer__link[href*="https://goo"]
 {
   color: var(--white-color);
@@ -204,7 +213,6 @@ body {
 }
 
 .btn__item {
-  display: block;
   padding: 6px 22px;
 
   font-family: inherit;
@@ -241,15 +249,10 @@ body {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  text-align: left;
   color: var(--main-color);
 }
 
 .works__descr {
-  margin-top: 4px;
-  margin-bottom: 20px;
-  padding-left: 24px;
-
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.03em;
